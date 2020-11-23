@@ -3,7 +3,7 @@ services:
   - docker
 
 brfore_install:
-  - bocker build -t vinovero/multi-react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t vinovero/multi-react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true vinovero/multi-react-test npm run test -- --coverage

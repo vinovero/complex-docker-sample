@@ -15,7 +15,7 @@ after_success:
   - docker build -t vinovero/multi-worker ./worker 
   #Log in the docker CLI
   - docker logout
-  - echo "vnovero" | docker login -u "mas0menos" --password-stdin
+  - echo "mas0menos" | docker login -u "vinovero" --password-stdin
   # Take those images and push them to docker hub
   - docker push vinovero/multi-client
   - docker push vinovero/multi-nginx

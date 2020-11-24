@@ -2,7 +2,7 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "name": "clien",
+            "name": "client",
             "image": "vinovero/multi-client",
             "hostname": "client",
             "essential": false,

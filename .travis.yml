@@ -21,3 +21,16 @@ after_success:
   - docker push vinovero/multi-nginx
   - docker push vinovero/multi-server
   - docker push vinovero/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker-sample
+  env: MultiDockerSample-env
+  bucket_name: elasticbeanstalk-us-east-2-227641873353
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY

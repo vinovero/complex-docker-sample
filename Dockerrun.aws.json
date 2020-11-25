@@ -34,7 +34,7 @@
                 }
             ],
             "links": [
-                "clinet", "server"
+                "client", "server"
             ],
             "memory": 128
         }

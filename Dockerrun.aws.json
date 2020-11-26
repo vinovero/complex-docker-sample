@@ -46,16 +46,17 @@
             "links": [
                 "client", "server"
             ],
-            "memory": 128
-        }
-    ],
-    "mountPoints": [
+            "memory": 128,
+            "mountPoints": [
        
-        {
-          "sourceVolume": "nginx-proxy-conf",
-          "containerPath": "/etc/nginx/conf.d",
-          "readOnly": true
+                {
+                  "sourceVolume": "nginx-proxy-conf",
+                  "containerPath": "/etc/nginx/conf.d",
+                  "readOnly": true
+                }
+              ]
         }
-      ]
+    ]
+  
     
 }

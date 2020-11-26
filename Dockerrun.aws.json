@@ -7,7 +7,13 @@
           "host": {
             "sourcePath": "/var/app/current/nginx"
           }
-        }
+        },
+        {
+            "name": "nginx-proxy-client-conf",
+            "host": {
+              "sourcePath": "/var/app/current/client/nginx"
+            }
+          }
       ],
     "containerDefinitions": [
         {
@@ -15,7 +21,14 @@
             "image": "vinovero/multi-client",
             "hostname": "client",
             "essential": false,
-            "memory": 128
+            "memory": 128,            
+            "mountPoints": [               
+                {
+                  "sourceVolume": "nginx-proxy-client-conf",
+                  "containerPath": "/etc/nginx/conf.d",
+                  "readOnly": true
+                }
+              ]
         },
         {
             "name": "server",

@@ -1,20 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "volumes": [
-       
-        {
-          "name": "nginx-proxy-conf",
-          "host": {
-            "sourcePath": "/var/app/current/nginx"
-          }
-        },
-        {
-            "name": "nginx-proxy-client-conf",
-            "host": {
-              "sourcePath": "/var/app/current/client/nginx"
-            }
-          }
-      ],
+ 
     "containerDefinitions": [
         {
             "name": "client",
@@ -58,14 +44,7 @@
             "links": [
                 "client", "server"
             ],
-            "memory": 128,
-            "mountPoints": [               
-                {
-                  "sourceVolume": "nginx-proxy-conf",
-                  "containerPath": "/etc/nginx/conf.d",
-                  "readOnly": true
-                }
-              ]
+            "memory": 128            
         }
     ]
   
